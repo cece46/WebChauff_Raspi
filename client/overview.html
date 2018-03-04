@@ -1,0 +1,119 @@
+<template name="overview">
+<html>
+<head>
+<title>WebChauff</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" sizes="64x64" href="/favicon.ico">    
+	<link rel="stylesheet" type="text/css" ng-href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" ng-href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" ng-href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" ng-href="css/util.css">
+	<link rel="stylesheet" type="text/css" ng-href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/House180x180.png">
+	<meta name="apple-mobile-web-app-title" content="Programme Chauffage">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<link rel="apple-touch-startup-image" href="images/House180x180.png">
+
+
+</head>
+<body>
+
+    <script  src="vendor/bootstrap/js/popper.js"></script>
+	
+	<script  src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script  src="vendor/animsition/js/animsition.min.js"></script>
+	<script  src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script  src="vendor/select2/select2.min.js"></script>
+	<script  src="vendor/daterangepicker/moment.min.js"></script>
+	<script  src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script  src="vendor/countdowntime/countdowntime.js"></script>
+	<script  src="js/main.js"></script>
+
+    <script  defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+    
+		<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+					<span class="login100-form-title p-b-26">
+						Programme de chauffage
+					</span>
+                    <center> {{> login_user}}  </center>
+                    <br>
+                    <br>
+                        <a class="txt1" id="backend">
+				            <h4><center>Etat du chauffage : {{> state_chauffage}}</center></h4>
+                        </a>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+					<form class="login100-form validate-form">
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button id="btn_pilot" class="login100-form-btn">
+								  <i class="fas fa-power-off"></i>&nbsp;&nbsp;Pilotage
+							</button>
+						</div>
+					</div>
+					</form>
+					<br/>
+					<br/>
+
+					<form class="login100-form validate-form">
+
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+									<button id="btn_logout" class="login100-form-btn">
+										<i class="fas fa-sign-out-alt animated fadeInLeft"></i>&nbsp;&nbsp;Déconnexion
+									</button>
+							</div>
+						</div>
+					</form>
+
+			</div>
+		</div>
+    </div>
+	<div id="dropDownSelect1"></div>
+    
+</body>
+</html>
+
+</template>
+ <template name="login_user">
+    <b> Bienvenue {{user}}</b>
+    <div >
+        <a class="h5" id="info">
+            Dernière visite le {{lastlogin}}
+        </a>
+     </div>
+</template>
+ 
+<template name="state_chauffage">
+    
+    {{#if state_chauffage}}
+        <span class="label label-success" id="IO"> 
+           Allumé
+        </span>
+    {{else}}
+        <span class="label label-default" id="IO"> 
+           Coupé
+        </span>
+    {{/if}}
+
+</template>

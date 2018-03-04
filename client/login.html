@@ -1,0 +1,92 @@
+<template name="login">
+<head>
+	<title>WebChauff</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" sizes="64x64" href="/favicon.ico">    
+	<link rel="stylesheet" type="text/css" ng-href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" ng-href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" ng-href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" ng-href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" ng-href="css/util.css">
+	<link rel="stylesheet" type="text/css" ng-href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/House180x180.png">
+	<meta name="apple-mobile-web-app-title" content="Programme Chauffage">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<link rel="apple-touch-startup-image" href="images/House180x180.png">
+
+
+</head>
+<body>
+
+    <script  src="vendor/bootstrap/js/popper.js"></script>    
+	<script  src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script  src="vendor/animsition/js/animsition.min.js"></script>
+	<script  src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script  src="vendor/select2/select2.min.js"></script>
+	<script  src="vendor/daterangepicker/moment.min.js"></script>
+	<script  src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script  src="vendor/countdowntime/countdowntime.js"></script>
+	<script  src="js/main.js"></script>
+
+    <script  defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+    
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						Programme de chauffage
+					</span>
+					<span class="login100-form-title p-b-48">
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7ZdLTBNRFIYv+ErcG1fGjVGxUETdghsXRvGBj8SlicaYGDW+FkYSRdQNxgcxunDhQk1YSOKCxJiogIpKobFWRPqagUKnM50iBWyjUTzeGQcypGeGThm5JZk/+dKmc8/c888/93aGOHLkyJEjvYCQooiLHIqUktP0e7H28/xSyEVWUAPPKKDREXGT1drhwtdUCi6S0plQCbtIhn4WfjpICkYUZjpmKRhRcOlYSMEItunkk4IRzNKxkgJfvQ74/ZvQYwhzk46VFLjyhRC9dg7E2AjE42Mw2FgPkYol6Fg9/z0daymUgND+GsREZhqCxwv8vo1oDYK96VhO4coZEIe+ZZmYRE3nVt3cpmMlBW77WppCO9o8huDpBn7vBvRcCPmnQ6/GgZx2JPcCiNafMkxB7umF5EcfekxN58ZFms5i/Nw6lHTCZeSI1l7uooUt2An1cNvWQKytFW1SYfzeJYCqIoBKAumGE+gYBaGzC/prytE59IRLyRutvdxlasRdDNHLJ2kKw2hjKvRq/9myVDWhQg1J/SI+lqKkE71ea5qOrUb4rasg1voKbUaP0vSUCY2oLwDcwJiKIKbROuF9J/C73VnzKthjREmh7rh5CjowI03NQXjQ9I/e0AhapxAXRmGw4QJw6xfZa0RN4eULdFIjMCNPngbhYXNIpS+cQuv0CO8+AL+rbPZGaOFE/7GaPnEwiU5kBmZE/hJAx5oSS8HA+cNBuoP+yssILbzNlZGquJR+jE4wA7O5tbKQMi3BElJBjdzV2rOuQjGitZO/7DQi+AMwFEurCBK+a6GwNCL3BrOMJLs86NgZYWUk8TUMv/eszDIysWM5yL5PaI0prIz8OLszy8QkP49WojWmsDAi0e0SNhejJiZJBHm01hAWRhIBDm1eT9LbjdYawuTWEsdhonoZakBBeZCUcnzMmYLVGhm/fxU1ofD9Jn2PR2pMYWVEpP8RyvvHtLVCH+MzdQfVNYTWmMHMiIbs/wyjj+5QGum68KJjcoK1Eduww0ggnGrrC6WAJYHIqFdrJ395/Um+wyMBS7r9sqS1k78cIzbiGNHL1zP8vMsnD7PE15N8q7XjyJEjR/NehPwFDHfrNfbJL9EAAAAASUVORK5CYII=">
+                    <!--    <i class="zmdi animated fadeInLeft zmdi-home"></i>-->
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Saisir un login">
+						<input class="input100" id="sai_login" type="text" autocomplete="username" name="username">
+						<span class="focus-input100" data-placeholder="Login"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Saisir un password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" id="sai_password" autocomplete="current-password" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+ <br>
+                                <br> <br>
+                                <br>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button id="btn_login" class="login100-form-btn">
+                               
+                                <i class="fas fa-sign-in-alt animated fadeInLeft"></i>&nbsp;&nbsp;Login
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+    {{> notifications}}
+
+	<div id="dropDownSelect1"></div>
+	
+</body>
+</template>

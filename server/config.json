@@ -1,0 +1,8 @@
+{
+    "dbHost":"192.168.1.254",
+    "dbUser":"chauffage",
+    "dbPassword":"lomaco,46",
+    "dbName":"WebChauff",
+    "gpio_status":"4",
+    "gpio_relais":"1"
+}
