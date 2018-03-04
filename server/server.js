@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
-/***************************** Config Mysql **************************/
+/***************************** Config  **************************/
+
 var Future = Npm.require("fibers/future");
 var exec = Npm.require("child_process").exec;
 var CONFIG = require('./config.json'); //dossier server
