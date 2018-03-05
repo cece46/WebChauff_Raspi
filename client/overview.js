@@ -90,14 +90,14 @@ if(Meteor.isClient){
             var datestring = ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)+"@"+("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +d.getFullYear();   
             
             Meteor.call("PilotChauffage",Session.get("login_user"), function(error, result){
-                
-                if(error){
+                if(result==false || error){
                     
-                    Notification.error("Erreur durant la demande d'ouverture à "+datestring)
+                    Notification.error("Erreur durant la demande noté à "+datestring+".")
                     
-                } else {
+                } 
+                else {
                 
-                    Notifications.success("Ouverture demandée à ",datestring+". <br>Info du boitier : "+result);                  
+                    Notifications.success("Pilotage demandé à "+datestring+".");                  
                 }
             });
  

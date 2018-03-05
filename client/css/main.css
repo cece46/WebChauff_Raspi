@@ -404,7 +404,7 @@ iframe {
   height: 50px;
 }
 
-.wrap-login100-form-btn:hover .login100-form-bgbtn {
+.wrap-login100-form-btn:focus .login100-form-bgbtn {
   left: 0;
 }
 

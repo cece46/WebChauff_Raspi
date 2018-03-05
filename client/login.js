@@ -38,6 +38,14 @@ if (Meteor.isClient) {
             
             if ((login != '') && (password != '')) {
                 
+                 Meteor.call('FindLastLogin',login,password, function(error, result){
+                    if (!error)
+                    {
+                        Session.set("last_login",result.toLocaleString('fr-FR', { timeZone: 'Europe/Paris'}));
+                    }
+                });
+
+                
                 Meteor.call('LoginWithBDD',login,password, function(error, result){
 
                     if ((result == false) || (result==undefined))
@@ -49,13 +57,7 @@ if (Meteor.isClient) {
 
                     } else {
                         
-                        Meteor.call('FindLastLogin',login,password, function(error, result){
-                            if (!error)
-                                {
-                                    Session.set("last_login",result.toLocaleString('fr-FR', { timeZone: 'Europe/Paris'}));
-                                }
-                        });
-
+                       
                         Router.go('/overview');
 
                         Session.set("login_IO",Math.round(new Date().getTime()/1000.0))                        

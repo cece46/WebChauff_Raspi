@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
 /***************************** Config  **************************/
-
 var Future = Npm.require("fibers/future");
 var exec = Npm.require("child_process").exec;
 var CONFIG = require('./config.json'); //dossier server
@@ -79,30 +78,36 @@ Meteor.startup(() => {
                    
             //Insert_in_MySQL("OPENPORTAL",_login,retour)
             this.unblock();
-            
+            var retour=false;
             var future=new Future();
             var command="gpio mode "+gpio_relais+" out";
+            //var command="uname";
 
             exec(command,function(error,stdout,stderr){
                 if(error){
-                  console.log(error);
-                  throw new Meteor.Error(500,command+" failed");
+                    retour=false;
+                    console.log(error);
+                    throw new Meteor.Error(500,command+" failed");
                 }
+                retour=true;
                 //future.return(stdout.toString());
             });
+           
             Meteor._sleepForMs(500);
             command="gpio mode "+gpio_relais+" in";
 
             exec(command,function(error,stdout,stderr){
                 if(error){
-                  console.log(error);
-                  throw new Meteor.Error(500,command+" failed");
+                    retour=false;
+                    console.log(error);
+                    throw new Meteor.Error(500,command+" failed");
                 }
-                //future.return(stdout.toString());
+                retour=true;
+                future.return(stdout.toString());
             });
             
-            console.log("Pilotage!")
-            return future.wait();
+            //console.log("Pilotage!")
+            return retour;
         },
         
        State_Chauffage : function(){
@@ -110,8 +115,8 @@ Meteor.startup(() => {
             this.unblock();
             
             var future=new Future();
-            //var command="gpio read "+gpio_status;
-            var command="uname -a";
+            var command="gpio read "+gpio_status;
+            //var command="uname -a";
             exec(command,function(error,stdout,stderr){
                 if(error){
                   console.log(error);
